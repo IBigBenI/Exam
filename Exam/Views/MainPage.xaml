@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exam.MainPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Editor}">
+        <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+    </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="{StaticResource PageMargin}">
+        <Editor Placeholder="Введите ваш текст"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+
+        <Grid ColumnDefinitions="*,*">
+
+            <Button Text="Сохранить"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Удалить"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
